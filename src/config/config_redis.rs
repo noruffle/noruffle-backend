@@ -7,10 +7,12 @@ pub trait Redis {
 
 impl Redis for Config {
     fn redis_get_address() -> String {
-        let ip = dotenv::var("REDIS_IP")
-            .expect("IP redis не указан в env");
-        let port = dotenv::var("REDIS_PORT")
-            .expect("PORT redis не указан в env");
+        let (ip, port) = (
+            dotenv::var("REDIS_IP")
+                .expect("IP redis не указан в env"),
+            dotenv::var("REDIS_PORT")
+                .expect("PORT redis не указан в env")
+        );
         
         println!("Redis going on http://{ip}:{port}");
         

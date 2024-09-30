@@ -11,10 +11,12 @@ pub trait Server {
 
 impl Server for Config {
     fn server_get_address() -> String {
-        let ip = dotenv::var("SERVER_IP")
-            .expect("IP сервера не указан в env");
-        let port = dotenv::var("SERVER_PORT")
-            .expect("PORT сервера не указан в env");
+        let (ip, port) = (
+            dotenv::var("SERVER_IP")
+                .expect("IP сервера не указан в env"),
+            dotenv::var("SERVER_PORT")
+                .expect("PORT сервера не указан в env"),
+        );
         
         println!("Server going on http://localhost:{port}");
         
