@@ -1,5 +1,5 @@
-use axum::{extract::Query, Extension};
-use redis::Commands;
+/* use axum::{extract::Query, Extension};
+use redis::Commands; */
 
 #[axum_macros::debug_handler]
 pub async fn hello_world() -> &'static str {
@@ -11,7 +11,7 @@ pub async fn list_api() -> &'static str {
     "Api List"
 }
 
-#[axum_macros::debug_handler]
+/* #[axum_macros::debug_handler]
 pub async fn user_create
 (
     Query(query): Query<User>,
@@ -33,4 +33,4 @@ pub async fn user_create
 pub struct User {
     pub username: String,
     pub age: u32
-}
+} */

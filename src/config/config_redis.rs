@@ -1,5 +1,6 @@
 use super::Config;
 
+#[allow(dead_code)]
 pub trait Redis {
     fn redis_get_address() -> String;
     fn redis_create_client() -> std::sync::Arc<tokio::sync::Mutex<redis::Client>>;
