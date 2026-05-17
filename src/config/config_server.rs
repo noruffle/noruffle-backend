@@ -14,19 +14,19 @@ impl Server for Config {
 
         if self.network.stage == "dev" {
             
-            let ip = "localhost";
             self.status.is_enabled = Some(true);
             
-            println!("
-                [Success]: Server started on: http://{ip}:{}/api",
+            println!(
+                "[Success] Server started on: \nhttp://{}:{}/api",
+                self.network.ip,
                 self.network.port
             )
             
         } else if self.network.stage == "prod" {
             
             self.status.is_enabled = Some(true);
-            print!("
-                [Success]: Server started on: http://{}:{}/api", 
+            print!(
+                "[Success] Server started on: \nhttp://{}:{}/api", 
                 self.network.ip, 
                 self.network.port
             )
@@ -35,7 +35,7 @@ impl Server for Config {
             
             self.status.is_enabled = Some(false);
             println!(
-                "[Error]: Server is not started. Issue with IP/PORT of server"
+                "[Error] Server is not started. \nIssue with IP/PORT of server"
             )
         }
         

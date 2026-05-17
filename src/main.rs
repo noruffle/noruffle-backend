@@ -27,7 +27,7 @@ async fn main() {
         }
     };
 
-    println!("{:?}", application);
+    println!("{:?}", application.network);
 
     application.server_create_app().await;
     
